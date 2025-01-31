@@ -31,12 +31,25 @@ routes.get('/render-table', async (req, res) => {
             return rows.map(row => {
                 const cells = Array.from(row.children)
                 .filter(td => td.textContent.trim() !== '')
-                .map(td => td.textContent.trim());
+                .map(td => { 
+                    const cellText = Array.from(td.childNodes)
+                    .map(node => node.textContent.trim())
+                    .filter(text =>  {                        
+                        return text !== ''
+                    })
+                    .join(', ')
+
+                    const cleanedText = cellText.replace(/\(карта\)/g, '').trim();
+        
+                    return cleanedText
+                })
+    
                 return cells;
             });
+
         });
 
-        console.log("Extracted Table Data:", tableData);
+        // console.log("Extracted Table Data:", tableData);
 
         // Close browser
         await browser.close();
