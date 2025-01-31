@@ -1,5 +1,6 @@
 import { Router } from "express";
 import puppeteer from "puppeteer";
+import programService from "../services/programService.js";
 
 const routes = Router();
 const url = 'https://www.unwe.bg/bg/timetables/semesterresult?degID=1&cityID=1&formID=1&spec=2380&sem=2';
@@ -49,12 +50,14 @@ routes.get('/render-table', async (req, res) => {
 
         });
 
-        console.log("Extracted Table Data:", tableData);
+        const data = programService.generateCleanTableData(tableData)
+
+        console.log("Extracted Table Data:", data);
 
         // Close browser
         await browser.close();
-
-        await saveProgram()
+        
+        await programService.saveProgram(data)
 
 
         // Send extracted data as JSON
@@ -67,8 +70,6 @@ routes.get('/render-table', async (req, res) => {
 
 
 });
-
-
 
 
 export default routes;
