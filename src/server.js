@@ -2,6 +2,9 @@ import express from 'express';
 import handlebars from 'express-handlebars';
 import routes from './routes.js';
 import path from 'path';
+import 'dotenv/config';
+import { connectDb } from '../services/db.js';
+
 
 const app = express();
 
@@ -10,6 +13,8 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(process.cwd(), 'src', 'views'))
 
 app.use(express.static('public'))
+
+connectDb()
 
 app.use(routes)
 

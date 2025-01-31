@@ -49,7 +49,7 @@ routes.get('/render-table', async (req, res) => {
 
         });
 
-        // console.log("Extracted Table Data:", tableData);
+        console.log("Extracted Table Data:", tableData);
 
         // Close browser
         await browser.close();
@@ -61,6 +61,8 @@ routes.get('/render-table', async (req, res) => {
         await browser.close();
         res.status(500).json({ error: "Failed to fetch timetable data" });
     }
+
+    
 });
 
 export default routes;
