@@ -54,6 +54,9 @@ routes.get('/render-table', async (req, res) => {
         // Close browser
         await browser.close();
 
+        await saveProgram()
+
+
         // Send extracted data as JSON
         res.json({ tableData });
     } catch (error) {
@@ -62,7 +65,10 @@ routes.get('/render-table', async (req, res) => {
         res.status(500).json({ error: "Failed to fetch timetable data" });
     }
 
-    
+
 });
+
+
+
 
 export default routes;
