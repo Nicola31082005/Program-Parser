@@ -1,9 +1,50 @@
+/* General table styling */
 table {
     width: 100%;
     border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 17px;
+    text-align: left;
+    border: 2px solid #5D0000; /* Darker UNWE red */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
-td, th {
-    border: 1px solid black;
-    padding: 8px;
+
+/* Styling for the main row */
+.mainRow {
+    background-color: #5D0000; /* Darker UNWE red */
+    color: #800000 ; /* White text */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     text-align: center;
+}
+
+/* Table row and cell styling */
+tr {
+    border-bottom: 1px solid #bbb; /* Slightly darker border for better separation */
+}
+
+td {
+    padding: 12px;
+    border-right: 1px solid #ddd;
+}
+
+/* Alternate row colors for better visibility */
+tbody tr:nth-child(even) {
+    background-color: #EDEDED; /* Light gray */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #FFFFFF; /* White */
+}
+
+/* Stronger Hover effect */
+tbody tr:hover {
+    background-color: #C4A484; /* Beige-tinted highlight */
+    transition: 0.3s ease-in-out;
+}
+
+/* Remove right border for last column */
+td:last-child {
+    border-right: none;
 }

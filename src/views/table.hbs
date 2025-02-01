@@ -7,26 +7,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <table>
+    <table class="mainTable">
         <tbody>
-            <tr>
-                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+            <tr class="mainRow">
+            {{#each programNames}}<td>{{this}}</td>{{/each}}
             </tr>
+            {{#each programData}}
             <tr>
-                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+                <td>{{schoolStream}}</td><td>{{day}}</td><td>{{time}}</td><td>{{Discipline}}</td><td>{{Type}}</td><td>{{Kind}}</td><td>{{Lecturer}}</td><td>{{studyHall}}</td>
             </tr>
-            <tr>
-                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
-            </tr>
-            <tr>
-                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
-            </tr>
-            <tr>
-                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
-            </tr>
-            <tr>
-                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
-            </tr>
+            {{/each}}
         </tbody>
     </table>
 </body>

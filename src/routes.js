@@ -5,9 +5,9 @@ import programService from "../services/programService.js";
 const routes = Router();
 const url = 'https://www.unwe.bg/bg/timetables/semesterresult?degID=1&cityID=1&formID=1&spec=2380&sem=2';
 
-routes.get('/', (req, res) => {
-    res.render('table', { layout: false });
-});
+// routes.get('/', (req, res) => {
+//     res.render('table', { layout: false });
+// });
 
 routes.get('/render-table', async (req, res) => {
     // Launch the browser and open a new blank page
@@ -71,5 +71,13 @@ routes.get('/render-table', async (req, res) => {
 
 });
 
+routes.get('/table', async (req, res) => {
+    const programData = await programService.getProgramData();
+    const programNames = [ 'поток / група',	'ден', 'час', 'дисциплина', 'вид', 'тип', 'преподавател', 'зала за присъствено обучение' ] 
+    console.log(programNames);
+    
+    res.render('table', { programData, layout: false, programNames })
+   
+})
 
 export default routes;
