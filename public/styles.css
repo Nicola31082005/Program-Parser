@@ -48,3 +48,21 @@ tbody tr:hover {
 td:last-child {
     border-right: none;
 }
+
+/* Styling for the filter form */
+.filterForm {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.filterForm label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.filterForm select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}

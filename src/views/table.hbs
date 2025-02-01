@@ -7,17 +7,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Group Filter Form -->
+    <form id="groupFilterForm" class="filterForm">
+        <label for="groupSelect">Select Group:</label>
+        <select id="groupSelect">
+            <option value="">-- All Groups --</option>
+            <option value="1972">1972</option>
+            <option value="1971">1971</option>
+            <option value="1973">1973</option>
+        </select>
+    </form>
+
+    <!-- Main Table -->
     <table class="mainTable">
         <tbody>
             <tr class="mainRow">
-            {{#each programNames}}<td>{{this}}</td>{{/each}}
+                {{#each programNames}}<td>{{this}}</td>{{/each}}
             </tr>
             {{#each programData}}
-            <tr>
+            <tr data-group="{{schoolStream}}">
                 <td>{{schoolStream}}</td><td>{{day}}</td><td>{{time}}</td><td>{{Discipline}}</td><td>{{Type}}</td><td>{{Kind}}</td><td>{{Lecturer}}</td><td>{{studyHall}}</td>
             </tr>
             {{/each}}
         </tbody>
     </table>
+
 </body>
 </html>
