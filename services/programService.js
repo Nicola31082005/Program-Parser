@@ -1,7 +1,7 @@
 import Program from "../src/models/progam-model.js";
 
 // Retry operation utility function
-async function retryOperation(fn, retries = 3, delay = 1000) {
+async function retryOperation(fn, retries = 5, delay = 1000) {
     let attempt = 0;
 
     while (attempt < retries) {
