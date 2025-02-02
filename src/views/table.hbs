@@ -25,12 +25,14 @@
                 {{#each programNames}}<td>{{this}}</td>{{/each}}
             </tr>
             {{#each programData}}
-            <tr data-group="{{schoolStream}}">
+            <tr data-group="{{group}}">
                 <td>{{schoolStream}}</td><td>{{day}}</td><td>{{time}}</td><td>{{Discipline}}</td><td>{{Type}}</td><td>{{Kind}}</td><td>{{Lecturer}}</td><td>{{studyHall}}</td>
             </tr>
             {{/each}}
         </tbody>
     </table>
+
+    <script src="/src/app.js"></script>
 
 </body>
 </html>
