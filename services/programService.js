@@ -21,6 +21,6 @@ export default {
         });
     },
     async getProgramData(){
-        return await Program.find({}).lean()
+        return await Program.find({}).lean().sort({ Kind: 1, Type: 1 })
     }
 }

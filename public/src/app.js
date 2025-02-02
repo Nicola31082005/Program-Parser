@@ -12,7 +12,7 @@ function filterTableData(e) {
     rowsNodeList.forEach(row => {
         const group = row.getAttribute('data-group');
 
-        if (!currentGroup || group === currentGroup) {
+        if (!currentGroup || group === currentGroup || group === 'всички') {
             row.style.display = 'table-row';
         } else {
             row.style.display = 'none';
