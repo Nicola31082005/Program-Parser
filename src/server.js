@@ -12,7 +12,7 @@ app.engine('hbs', handlebars.engine({ extname: 'hbs', runtimeOptions: { allowPro
 app.set('view engine', 'hbs');
 app.set('views', path.join(process.cwd(), 'src', 'views'))
 
-app.use(express.static('public'))
+app.use(express.static(path.join(process.cwd(), 'public')))
 
 connectDb()
 
